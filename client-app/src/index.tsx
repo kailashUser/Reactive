@@ -1,24 +1,22 @@
-
+import React from 'react';
 import ReactDOM from 'react-dom';
-import './app/Layout/Style.css';
+import 'semantic-ui-css/semantic.min.css';
 import App from './app/Layout/App';
 import reportWebVitals from './reportWebVitals';
-import 'semantic-ui-css/semantic.min.css'
+import { store, StoreContext } from './app/stores/store';
+import { BrowserRouter } from 'react-router-dom';
 
 
 
-
-// const root = ReactDOM.createRoot(
-//   document.getElementById('root') as HTMLElement
-// );
-// root.render(
-//   <React.StrictMode>
-//     <App />
-//   </React.StrictMode>
-// );
 
 ReactDOM.render(
-  <App />,
+  <StoreContext.Provider value={store}>
+    <BrowserRouter>
+
+    <App />
+    </BrowserRouter>
+  </StoreContext.Provider>,
+  
   document.getElementById('root')
 );
 
