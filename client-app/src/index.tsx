@@ -9,12 +9,12 @@ import { BrowserRouter } from 'react-router-dom';
 
 
 
+
 ReactDOM.render(
   <StoreContext.Provider value={store}>
-    <BrowserRouter>
 
     <App />
-    </BrowserRouter>
+ 
   </StoreContext.Provider>,
   
   document.getElementById('root')
