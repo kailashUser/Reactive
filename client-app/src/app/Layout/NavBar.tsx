@@ -2,15 +2,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {Button, Container, Menu } from 'semantic-ui-react';
-// import { useStore } from '../stores/store';
 
-// interface Props{
-//     openForm : () => void
-// }
-
-// export default function NavBar({openForm} : Props) {
 export default function NavBar() {
-    // const {activityStore} = useStore();
+
 
 
     return (
@@ -26,8 +20,7 @@ export default function NavBar() {
               
              
                 <Menu.Item>
-                    {/* <Button onClick={openForm} positive content='Create Activity' /> */}
-                    <Button as={NavLink} to='/createActivity'  positive content='Create Activity' />
+                   <Button as={NavLink} to='/createActivity'  positive content='Create Activity' />
                 </Menu.Item>
             </Container>
         </Menu>

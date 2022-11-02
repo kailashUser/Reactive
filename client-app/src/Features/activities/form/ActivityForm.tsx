@@ -5,16 +5,7 @@ import { Button, Form, Segment } from 'semantic-ui-react';
 import LoadingComponent from '../../../app/Layout/LoadingComponent';
 import { useStore } from '../../../app/stores/store';
 import {v4 as uuid} from 'uuid';
-// interface Props{
-//     activity: Activity | undefined
-//     closeForm: () => void;
-//     createOrEdit : (activity: Activity) => void;
-//     submitting : boolean;
-// }
 
-
-
-// export default function ActivityForm({activity: SelectedActivty,closeForm,createOrEdit,submitting} : Props){
 export default observer(function ActivityForm(){
     const history = useHistory();
     const {activityStore} = useStore();
@@ -39,8 +30,6 @@ export default observer(function ActivityForm(){
 
 
     function handleSubmit(){
-        // createOrEdit(activity);
-        // activity.id ? updateActivity(activity) : createActivity(activity);
        if (activity.id.length === 0){
         let newActivity = {
             ...activity,

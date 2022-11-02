@@ -1,9 +1,12 @@
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css';
+import 'react-calendar/dist/Calendar.css';
 import App from './app/Layout/App';
 import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
 import { BrowserRouter } from 'react-router-dom';
+import './app/Layout/Style.css';
+
 
 ReactDOM.render(
   <StoreContext.Provider value={store}>
