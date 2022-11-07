@@ -36,7 +36,7 @@ export default class ActivityStore{
         try {  
             const activities = await agent.Activities.list();   
            
-                activities.forEach(activity => {
+                activities.forEach((activity: Activity) => {
                     this.setActivity(activity);
             
         })           
@@ -56,7 +56,7 @@ export default class ActivityStore{
             this.loadingInitial = true;
             try {
                 activity = await agent.Activities.details(id);
-                this.setActivity(activity);
+                this.setActivity(activity!);
                 this.selectedActivity = activity;
                 this.setLoadingInitial(false);
                 return activity;

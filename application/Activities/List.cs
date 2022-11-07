@@ -7,41 +7,29 @@ using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using Persistence;
+using application.Core;
+using application.Result;
 
 namespace application.Activities
 {
     public class List
     {
-        public class Query : IRequest<List<Activity>>
+        public class Query : IRequest<Result<List<Activity>>>
         {
         }
      
-        public class Handler : IRequestHandler<Query, List<Activity>>
+        public class Handler : IRequestHandler<Query, Result<List<Activity>>>
         {
                private readonly DataContext _context;
-            //private readonly ILogger _logger;
-               public Handler(DataContext context/*,ILogger<List> logger*/) 
-                {
-                    _context = context;
-                   //_logger = logger;
-                }
-            public async Task<List<Activity>> Handle(Query request, CancellationToken cancellationToken)   
+         
+            public Handler(DataContext context) 
             {
-                //try
-                //{
-                //    for (int i = 0; i < 10; i++)
-                //    {
-                //        cancellationToken.ThrowIfCancellationRequested();
-                //        await Task.Delay(1000, cancellationToken);
-                //        _logger.LogInformation($"Task {i} has been completed");
-                //    }
-                //}
-                //catch (Exception ex) when(ex is TaskCanceledException)
-                //{
-                //    _logger.LogInformation("Task has cancelled");
-                //}
+                _context = context;                   
+            }
 
-                    return await _context.Activities.ToListAsync();
+            public async Task<Result<List<Activity>>> Handle(Query request, CancellationToken cancellationToken)   
+            {
+                    return Result<List<Activity>>.Success(await _context.Activities.ToListAsync());
             }
 
         }
