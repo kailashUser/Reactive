@@ -1,14 +1,8 @@
-using Persistence;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
-using System.Collections.Generic;
 using Domain;
-using Microsoft.EntityFrameworkCore;
 using System;
-using MediatR;
 using application.Activities;
-using System.Threading;
-using application.Core;
 
 namespace API.Controllers
 {
@@ -17,8 +11,7 @@ namespace API.Controllers
 
       
       
-        [HttpGet]
-       
+        [HttpGet]       
         public async Task<IActionResult> GetActivities()
         {
             //return await Mediator.Send(new List.Query());
