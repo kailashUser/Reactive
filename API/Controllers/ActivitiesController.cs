@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Domain;
 using System;
 using application.Activities;
-
+using Microsoft.AspNetCore.Authorization;
 namespace API.Controllers
 {
     public class ActivitiesController : BaseApiController
@@ -18,7 +18,8 @@ namespace API.Controllers
             return HandleResult(await Mediator.Send(new List.Query()));
         }
 
-        [HttpGet("{id}")]
+       
+        [HttpGet("{id}")] 
         public async Task<IActionResult> GetActivity(Guid id)
         {
                  
