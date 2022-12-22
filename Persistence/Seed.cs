@@ -21,6 +21,7 @@ namespace Persistence
                     new AppUser{DisplayName = "Jane", UserName = "jane", Email = "jane@test.com"},
                 };
 
+
                 foreach (var user in users)
                 {
                     await userManager.CreateAsync(user, "Pa$$w0rd");
